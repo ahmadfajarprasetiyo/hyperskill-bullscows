@@ -8,16 +8,43 @@ class BullsAndCows {
     void generateSecretCode() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please, enter the secret code's length:");
+        System.out.println("Input the length of the secret code:");
 
         int numberOfDigit = scanner.nextInt();
 
-        if(numberOfDigit > 10) {
+        System.out.println("Input the number of possible symbols in the code:");
+
+        int lengthPossible = scanner.nextInt();
+
+        if(numberOfDigit > lengthPossible || lengthPossible > 36) {
             System.out.printf("Error: can't generate a secret number with a length of %d because there aren't enough unique digits.", numberOfDigit);
             return;
         }
 
-        List<Character> numbers = Arrays.asList('0','1','2','3','4','5','6','7','8','9');
+        List<Character> numbers = new ArrayList<>();
+
+        for(int i = 0; i < Math.min(lengthPossible,10); i++) {
+            char entity = (char) ('0' + i);
+            numbers.add(entity);
+        }
+
+        for(int i = 0; i < lengthPossible-10; i++) {
+            char entity = (char) ('a' + i);
+            numbers.add(entity);
+        }
+
+        System.out.print("The secret is prepared: ");
+        for(int i = 0; i < numberOfDigit; i++) {
+            System.out.print("*");
+        }
+
+        if(lengthPossible <= 10) {
+            System.out.printf(" (0-%c).\n", numbers.get(numbers.size()-1));
+        } else {
+            System.out.printf(" (0-9, a-%c).\n", numbers.get(numbers.size()-1));
+        }
+
+
         final Random r = new Random();
         StringBuilder secretCode = new StringBuilder();
         Collections.shuffle(numbers, r);
