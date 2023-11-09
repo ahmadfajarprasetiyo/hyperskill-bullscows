@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BullsCowsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-09T06:48:56" hostname="Ahmads-MacBook-Air.local" time="0.065">
+<testsuite name="BullsCowsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-09T07:25:29" hostname="Ahmads-MacBook-Air.local" time="0.057">
   <properties/>
-  <testcase name="start" classname="BullsCowsTest" time="0.065"/>
+  <testcase name="start" classname="BullsCowsTest" time="0.057"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-> 3601
-Grade: 1 bull(s) and 1 cow(s). The secret code is 9305.
-?[0;34mWhy 9305? Make your own secret number :)
+> 4
+The random secret number is 2986.
 ?[1;31m
 Start test 2?[0m
-> 9305
-Grade: 4 bull(s). The secret code is 9305.
-?[0;34mWhy 9305? Make your own secret number :)
+> 1
+The random secret number is 2.
 ?[1;31m
 Start test 3?[0m
-> 1246
-Grade: None. The secret code is 9305.
-?[0;34mWhy 9305? Make your own secret number :)
+> 11
+?[1;31m
+Start test 4?[0m
+> 6
+The random secret number is 298630.
+?[1;31m
+Start test 5?[0m
+> 3
+The random secret number is 298.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

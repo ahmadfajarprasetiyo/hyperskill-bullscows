@@ -3,10 +3,41 @@ package bullscows;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        final String secretCode = "9305";
-        
         Scanner scanner = new Scanner(System.in);
-        
+
+        int numberOfDigit = scanner.nextInt();
+
+        if(numberOfDigit > 10) {
+            System.out.printf("Error: can't generate a secret number with a length of %d because there aren't enough unique digits.", numberOfDigit);
+            return;
+        }
+
+
+        String seed = "";
+        StringBuilder secretCode = new StringBuilder();
+
+
+
+        do {
+            if(seed.isEmpty()) {
+                seed = String.valueOf(System.nanoTime());
+                for(int i = 0; i < secretCode.length(); i++) {
+                    seed = seed.replace(String.valueOf(secretCode.charAt(i)),"");
+                }
+            } else {
+                secretCode.append(seed.charAt(0));
+                seed = seed.replace(String.valueOf(secretCode.charAt(secretCode.length()-1)),"");
+            }
+        } while(secretCode.length() != numberOfDigit);
+
+        System.out.printf("The random secret number is %s.\n", secretCode);
+    }
+
+    private static void grader() {
+        final String secretCode = "9305";
+
+        Scanner scanner = new Scanner(System.in);
+
         String answer = scanner.nextLine();
         int bulls = 0;
         int cows = 0;
