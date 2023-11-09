@@ -10,16 +10,36 @@ class BullsAndCows {
 
         System.out.println("Input the length of the secret code:");
 
-        int numberOfDigit = scanner.nextInt();
+        String numberOfDigitString = scanner.nextLine();
+        int numberOfDigit = 0;
+        try {
+            numberOfDigit = Integer.parseInt(numberOfDigitString);
+        } catch (Exception e) {
+            System.out.printf("Error: \"%s\" isn't a valid number.", numberOfDigitString);
+            return;
+        }
 
         System.out.println("Input the number of possible symbols in the code:");
 
-        int lengthPossible = scanner.nextInt();
-
-        if(numberOfDigit > lengthPossible || lengthPossible > 36) {
-            System.out.printf("Error: can't generate a secret number with a length of %d because there aren't enough unique digits.", numberOfDigit);
+        String lengthPossibleString = scanner.nextLine();
+        int lengthPossible = 0;
+        try {
+            lengthPossible = Integer.parseInt(lengthPossibleString);
+        } catch (Exception e) {
+            System.out.printf("Error: \"%s\" isn't a valid number.", lengthPossibleString);
             return;
         }
+
+        if(numberOfDigit > lengthPossible || numberOfDigit == 0) {
+            System.out.printf("Error: it's not possible to generate a code with a length of %d with %d unique symbols.", numberOfDigit, lengthPossible);
+            return;
+        }
+
+        if(lengthPossible > 36) {
+            System.out.println("Error: maximum number of possible symbols in the code is 36 (0-9, a-z).");
+            return;
+        }
+
 
         List<Character> numbers = new ArrayList<>();
 
