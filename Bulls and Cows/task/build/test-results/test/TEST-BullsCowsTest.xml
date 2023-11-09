@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BullsCowsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-09T06:35:11" hostname="Ahmads-MacBook-Air.local" time="0.042">
+  <properties/>
+  <testcase name="start" classname="BullsCowsTest" time="0.042"/>
+  <system-out><![CDATA[?[1;31m
+Start test 1?[0m
+The secret code is prepared: ****.
+
+Turn 1. Answer:
+1234
+Grade: None.
+
+Turn 2. Answer:
+9876
+Grade: 4 bulls.
+Congrats! The secret code is 9876.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
