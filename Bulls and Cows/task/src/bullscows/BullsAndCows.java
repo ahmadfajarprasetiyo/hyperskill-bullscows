@@ -1,6 +1,6 @@
 package bullscows;
 
-import java.util.Scanner;
+import java.util.*;
 
 class BullsAndCows {
     String secretCode;
@@ -17,20 +17,14 @@ class BullsAndCows {
             return;
         }
 
-        String seed = "";
+        List<Character> numbers = Arrays.asList('0','1','2','3','4','5','6','7','8','9');
+        final Random r = new Random();
         StringBuilder secretCode = new StringBuilder();
+        Collections.shuffle(numbers, r);
 
-        do {
-            if(seed.isEmpty()) {
-                seed = String.valueOf(System.nanoTime());
-                for(int i = 0; i < secretCode.length(); i++) {
-                    seed = seed.replace(String.valueOf(secretCode.charAt(i)),"");
-                }
-            } else {
-                secretCode.append(seed.charAt(0));
-                seed = seed.replace(String.valueOf(secretCode.charAt(secretCode.length()-1)),"");
-            }
-        } while(secretCode.length() != numberOfDigit);
+        for (int i = 0; i < numberOfDigit; i++) {
+            secretCode.append(numbers.get(i));
+        }
 
         this.secretCode = secretCode.toString();
 
