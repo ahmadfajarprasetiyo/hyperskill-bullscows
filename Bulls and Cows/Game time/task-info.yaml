@@ -244,6 +244,12 @@ files:
           }
       }
     learner_created: false
+  - name: src/bullscows/BullsAndCows.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/projects/53/stages/290/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 09 Nov 2023 07:58:13 UTC"
 record: -1
